@@ -9,6 +9,11 @@
             function toggleTheme() {
                 const theme = document.documentElement.dataset.theme;
                 document.documentElement.dataset.theme = theme === "dark" ? "light" : "dark";
+                localStorage.setItem("theme", document.documentElement.dataset.theme);
+            }
+
+            if (localStorage.getItem("theme")) {
+                document.documentElement.dataset.theme = localStorage.getItem("theme");
             }
         </script>
     </head>
