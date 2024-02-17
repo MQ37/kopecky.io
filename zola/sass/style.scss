@@ -1,0 +1,124 @@
+$light-bg: #f8f9fa;
+$light-text: #212529;
+$light-link: #007bff;
+$light-link-hover: #0056b3;
+
+$dark-bg: #212529;
+$dark-text: #f8f9fa;
+$dark-link: #007bff;
+$dark-link-hover: #0056b3;
+
+:root {
+    --bg-color: #{$light-bg};
+    --text-color: #{$light-text};
+    --link-color: #{$light-link};
+    --link-hover-color: #{$light-link-hover};
+
+    font-size: 20px;
+
+    .theme-button {
+        cursor: pointer;
+        font-size: 1.25rem;
+        border: none;
+        background-color: transparent;
+        color: inherit;
+    }
+
+    .theme-button::after {
+        content: "🌑"; 
+    }
+}
+
+[data-theme="dark"] {
+    --bg-color: #{$dark-bg};
+    --text-color: #{$dark-text};
+    --link-color: #{$dark-link};
+    --link-hover-color: #{$dark-link-hover};
+
+    .theme-button::after {
+        content: "☀️"; 
+    }
+}
+
+
+body, html {
+    @media (min-width: 768px) {
+        max-width: 80%;
+        width: 80%;
+    }
+    @media (max-width: 767px) {
+        width: 95%;
+    }
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    margin: 0 auto;
+    font-family: Times, "Times New Roman", serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--link-hover-color);
+    }
+}
+
+header {
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .header-nav-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-left: 1rem;
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.center-container {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}

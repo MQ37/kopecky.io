@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+    <head>
+        <meta charset="utf-8">
+        <title>kopecky.io</title>
+        <link rel="stylesheet" href="/style.css">
+        <script>
+            function toggleTheme() {
+                const theme = document.documentElement.dataset.theme;
+                document.documentElement.dataset.theme = theme === "dark" ? "light" : "dark";
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <a href="/">
+                    <h1>kopecky.io</h1>
+                </a>
+            </div>
+
+            <div class="header-nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="/blog">/blog</a></li>
+                        <li><a href="/about">/about</a></li>
+                    </ul>
+                </nav>
+                <div style="padding-left: 1rem;">
+                    <button class="theme-button" onclick="toggleTheme()"></button>
+                </div>
+            </div>
+        </header>
+        <main>
+            {% block content %} {% endblock %}
+        </main>
+    </body>
+
+</html>
