@@ -5,7 +5,7 @@ template = "about.html"
 
 Hey, I'm Jakub Kopecky, known as mq37. I'm passionate about:
 - **problem solving**
-- **software engineering**: Python, Svelte, Nix(OS), tinkering with dotnet C#, avid to learn Rust and it's amazing OCaml inspired type system
+- **software engineering**: Python, Typescript Svelte, Nix(OS), tinkering with dotnet C#, avid to learn Rust and it's amazing OCaml inspired type system
 - **cyber security**: done a few CTFs and really enjoyed them, basic reverse engineering, participated in national cyber security competition
 - **server stuff**: this site runs on NixOS with simple mail server, also have a few RPIs
 - **artificial intelligence**: tinkered with GANs few years ago and now with Stable Diffusion and local LLMs, my favorite algo is KNN for it's simplicity
