@@ -13,5 +13,5 @@ I though that the xUnit call the contructor automatically before each test like 
 
 # Conclusion
 
-Before actually working with the dotnet ecosystem I though that going from dynamically typed Python to statically typed C# will be great and make the project more sustainable, which I can't tell right since the project is in early stages, but the ecosystem which is arguably languages most important factor nowadays really sucks for dotnet. The language itself is great, just Java that does not suck that bad, but the Microsoft infested ecosystem and documentation is really bad. The Windows centric guides with screenshots from Visual Studio that are not usable for Linux system do not help either.
+Before actually working with the dotnet ecosystem I though that going from dynamically typed Python to statically typed C# will be great and make the project more sustainable, which I can't tell right now since the project is in early stages, but the ecosystem which is arguably the most important factor nowadays really sucks for dotnet. The language itself is great, just Java that does not suck that bad, but the Microsoft infested ecosystem and documentation is really bad. The Windows centric guides with screenshots from Visual Studio that are not usable for Linux system do not help either.
 
