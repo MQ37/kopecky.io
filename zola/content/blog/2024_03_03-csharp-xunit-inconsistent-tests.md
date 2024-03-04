@@ -9,7 +9,7 @@ After some research and rant searching on the internet I found this [reddit "ran
 
 # Solution
 
-I though that the xUnit call the contructor automatically before each test like Python Django `unittest` does with `setUp()`, surprise surprise it does not. So the solution for me was to create separate `SetUp()` method that is called in each `[Fact]` on top and also to make sure the tests run sequentially and not in random order I had to add `[Collection("Sequential")]` attribute to the test class.
+I though that the xUnit calls the contructor automatically before each test like Python Django `unittest` does with `setUp()`, surprise surprise it does not. So the solution for me was to create separate `SetUp()` method that is called in each `[Fact]` on top and also to make sure the tests run sequentially and not in random order I had to add `[Collection("Sequential")]` attribute to the test class.
 
 # Conclusion
 
