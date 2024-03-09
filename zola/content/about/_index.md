@@ -3,16 +3,16 @@ title = "About"
 template = "about.html"
 +++
 
-Hey, I'm Jakub Kopecky, known as mq37. I'm passionate about:
+Hey there! I'm Jakub Kopecky, also known as mq37. I'm passionate about:
 - **problem solving**
-- **software engineering**: Python, Typescript Svelte, Nix(OS), tinkering with dotnet C#, avid to learn Rust and it's amazing OCaml inspired type system
-- **cyber security**: done a few CTFs and really enjoyed them, basic reverse engineering, participated in national cyber security competition
-- **server stuff**: this site runs on NixOS with simple mail server, also have a few RPIs
-- **artificial intelligence**: tinkered with GANs few years ago and now with Stable Diffusion and local LLMs, my favorite algo is KNN for it's simplicity
-- **solution architecture**: enjoy designing a solution while keeping it simple
+- **software engineering**: Python, Typescript Svelte, Nix(OS), tinkering with dotnet C#, eager to learn and use Rust
+- **cyber security**: done several CTFs and really enjoyed them, basic reverse engineering, national cyber security competition finalist
+- **server stuff**: this site runs on NixOS with simple mail server, also own a few RPIs that I tinker with
+- **artificial intelligence**: played around with GANs and now exploring Stable Diffusion and local LLMs, KNN is simply simple king
+- **solution architecture**: KISS
 
 
-I'm currently studying Applied Informatics at [Faculty of Informatics, UJEP](https://ujep.cz) university while also working as a software engineer. In my spare time I like to tinker around, work on my side projects, learn new stuff and hit the gym. On this site I would like to share interesting stuff and solved issues that could help someone in future.
+Currently, I'm studying Applied Informatics @ [UJEP](https://ujep.cz) and working as a software engineer. In my spare time I like to tinker around, work on my side projects, learn new stuff and hit the gym. On this site I will share interesting stuff and solutions to problems that I encountered.
 
 # Find me 
 - Matrix: @mq37:matrix.org | @jakubkopecky:matrix.ki.ujep.cz
