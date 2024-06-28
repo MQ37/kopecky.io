@@ -8,11 +8,11 @@ Hey there! I'm Jakub Kopecky, also known as mq37. I'm passionate about:
 - **software engineering**: Python, Typescript Svelte, Nix(OS), tinkering with dotnet C#, eager to learn and use Rust
 - **cyber security**: done several CTFs and really enjoyed them, basic reverse engineering, national cyber security competition finalist
 - **server stuff**: this site runs on NixOS with simple mail server, also own a few RPIs that I tinker with
-- **artificial intelligence**: played around with GANs and now exploring Stable Diffusion and local LLMs, KNN is simply simple king
+- **artificial intelligence**: played around with GANs back in the day, KNN is simply simple king
 - **solution architecture**: KISS
 
 
-Currently, I'm studying Applied Informatics @ [UJEP](https://ujep.cz) and working as a software engineer. In my spare time I like to tinker around, work on my side projects, learn new stuff and hit the gym. On this site I will share interesting stuff and solutions to problems that I encountered.
+Currently, I'm studying Computer Science @ [UJEP](https://ujep.cz) and working as a software engineer. In my spare time I like to tinker around, work on my side projects, learn new stuff and hit the gym.
 
 # Find me 
 - Matrix: @mq37:matrix.org | @jakubkopecky:matrix.ki.ujep.cz
