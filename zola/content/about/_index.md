@@ -16,3 +16,4 @@ Studying CS @ [UJEP](https://ujep.cz/). Software engineer. Gaining knowledge. Gy
 # Contact
 - Github: [MQ37](https://github.com/MQ37)
 - LinkedIn: [doas-jakub-kopecky](https://www.linkedin.com/in/doas-jakub-kopecky)
+
