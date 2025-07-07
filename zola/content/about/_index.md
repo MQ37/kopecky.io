@@ -14,8 +14,10 @@ Jakub Kopecky (mq37). I focus on:
 Studying CS @ [UJEP](https://ujep.cz/). Software engineer. Gaining knowledge. Gym.
 
 # Contact
-- Matrix: @mq37:matrix.org | @jakubkopecky:matrix.ki.ujep.cz
 - Discord: mq37
 - Github: [MQ37](https://github.com/MQ37)
 - LinkedIn: [doas-jakub-kopecky](https://www.linkedin.com/in/doas-jakub-kopecky)
-- Email: [me@kopecky.io](mailto:me@kopecky.io)
+- Telegram: [@themq37](https://t.me/themq37)
+- Signal: mq37.36
+- Jami: themq37
+
