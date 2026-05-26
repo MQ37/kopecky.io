@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{TITLE}}</title>
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        function toggleTheme() {
+            const t = document.documentElement.dataset.theme;
+            document.documentElement.dataset.theme = t === "dark" ? "light" : "dark";
+            localStorage.theme = document.documentElement.dataset.theme;
+        }
+        if (localStorage.theme) document.documentElement.dataset.theme = localStorage.theme;
+    </script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="/">
+                <h1>kopecky.io</h1>
+            </a>
+        </div>
+        <div class="header-nav-container">
+            <nav>
+                <ul>
+                    <li><a href="/blog/">/blog</a></li>
+                    <li><a href="/about/">/about</a></li>
+                </ul>
+            </nav>
+            <button class="theme-button" onclick="toggleTheme()"></button>
+        </div>
+    </header>
+    <main>
