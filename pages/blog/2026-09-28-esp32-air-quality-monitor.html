@@ -14,7 +14,7 @@
 
 <p>With the help of a coding agent I got through it. Without it I would have struggled a lot, because I'm not that experienced in the hardware ecosystem, and it's really bad compared to the software one. Working through the build errors, flashing and pin config together with the agent felt really cool.</p>
 
-<p>The firmware is ESP-IDF with LVGL for the UI. Every 5 seconds it reads three sensors over I2C, averages the last five readings and shows four cards: temperature, humidity, eCO2 and TVOC, each with a simple label like "Optimal" or "Excellent". The gas sensors need time to warm up after power-on, until then the eCO2 and TVOC cards just say "Warming".</p>
+<p>The firmware is ESP-IDF with LVGL for the UI. Every 5 seconds it reads three sensor modules over I2C, averages the last five readings and shows four values as four cards: temperature, humidity, eCO2 and TVOC, each with a simple label like "Optimal" or "Excellent". The gas sensors need time to warm up after power-on, until then the eCO2 and TVOC cards just say "Warming".</p>
 
 <p>Everything is on GitHub: the firmware, the OpenSCAD files and STLs for the enclosure, and a wiring diagram. If you want to build the same thing, start at <a href="https://github.com/MQ37/esp32-air-quality-monitor">MQ37/esp32-air-quality-monitor</a>.</p>
 
@@ -44,13 +44,18 @@
 
 <h2>What's inside</h2>
 
+<p>To keep it simple: <strong>three sensor modules, four values on the screen.</strong> This is what I actually bought:</p>
+
 <ul>
-    <li><strong>ESP32-32E</strong> (ESP32-WROOM-32) with a 3.2" ST7789P3 240x320 IPS display and XPT2046 resistive touch, both on SPI</li>
-    <li><strong>BME680</strong> (Bosch): temperature and humidity, also used to compensate the two gas sensors. I2C, 0x77</li>
-    <li><strong>CCS811</strong>: eCO2. I2C, 0x5A</li>
-    <li><strong>ENS160</strong> (ScioSense): TVOC. I2C, 0x53</li>
+    <li><strong>ESP32-32E</strong> (ESP32-WROOM-32) board with a 3.2" ST7789P3 240x320 IPS display and XPT2046 resistive touch, both on SPI</li>
+    <li><strong>CJMCU-680</strong> module with a Bosch <strong>BME680</strong>: gives me the <em>temperature</em> and <em>humidity</em> cards, and I also feed both values to the two gas sensors for compensation. I2C, 0x77</li>
+    <li><strong>CCS811</strong> air-quality module: gives me the <em>eCO2</em> card. I2C, 0x5A</li>
+    <li><strong>ENS160 + AHT21</strong> module: gives me the <em>TVOC</em> card. This one is a two-in-one board with two chips on it, an ENS160 (ScioSense, air quality, I2C 0x53) and an AHT21 (temperature and humidity). I only use the ENS160, the firmware doesn't read the AHT21.</li>
 </ul>
-<p>Why three sensors when two of them measure similar things? I read online that when one of these sensors is also used for temperature, it gives bad readings on its other values. So instead of figuring out how to work around that, I bought more sensors and gave each one a single job.</p>
+
+<p>So there are three boards, and four chips if you count the AHT21 that I don't use.</p>
+
+<p>Why so many sensors when several of them measure similar things? The CCS811 and the ENS160 both report eCO2 and TVOC, and the BME680 and the AHT21 both measure temperature and humidity. I read online that when a gas sensor is also used for temperature, it gives bad readings on its other values. So instead of figuring out how to work around that, I bought more sensors and gave each one a single job.</p>
 
 <h2>What's next</h2>
 
