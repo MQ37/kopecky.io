@@ -1,0 +1,57 @@
+<!-- title: ESP32 - building an air-quality monitor with a coding agent -->
+<!-- date: 2026-09-28 -->
+<h1>ESP32 - building an air-quality monitor with a coding agent</h1>
+<p class="subtitle"><strong>2026-09-28</strong></p>
+
+<figure>
+    <img src="/img/air-quality-monitor-front.jpg" loading="lazy" width="1600" height="1198" alt="A white 3D-printed box standing on a desk with a USB cable plugged into its side. The screen shows four colored cards: Temp 29.4 C Hot, Humidity 59.1 % Optimal, eCO2 400 ppm Excellent, TVOC 25 ppb Excellent. Vent slots are visible on the top wall and next to the screen.">
+    <figcaption>The finished monitor on my desk.</figcaption>
+</figure>
+
+<p>I bought an ESP32 board with a built-in display from <a href="https://www.aliexpress.com/item/1005008239809369.html">AliExpress</a>. It's an ESP32-32E with a 3.2" 240x320 IPS touchscreen, the datasheet calls it E32R32P. I wanted to turn it into a small air-quality monitor for my desk.</p>
+
+<p>Getting it running was super complicated. All I got was a couple of example files and a pretty obscure datasheet. The demo worked, but after that I hit a lot of issues with compilation, deploying to the board, configuring the pins and getting everything set up correctly. For a while the backlight was on but the screen stayed black, which turned out to be the wrong SPI mode.</p>
+
+<p>With the help of a coding agent I got through it. Without it I would have struggled a lot, because I'm not that experienced in the hardware ecosystem, and it's really bad compared to the software one. Working through the build errors, flashing and pin config together with the agent felt really cool.</p>
+
+<p>The firmware is ESP-IDF with LVGL for the UI. Every 5 seconds it reads three sensors over I2C, averages the last five readings and shows four cards: temperature, humidity, eCO2 and TVOC, each with a simple label like "Optimal" or "Excellent". The gas sensors need time to warm up after power-on, until then the eCO2 and TVOC cards just say "Warming".</p>
+
+<p>Everything is on GitHub: the firmware, the OpenSCAD files and STLs for the enclosure, and a wiring diagram. If you want to build the same thing, start at <a href="https://github.com/MQ37/esp32-air-quality-monitor">MQ37/esp32-air-quality-monitor</a>.</p>
+
+<p>A caveat: I cleaned up the code for the public repo, and I'm traveling right now, so I can't flash the board. The cleaned-up version compiles, but it has not been tested on the hardware yet. Usually I flash it over USB-C. I decided to publish it anyway, so if something breaks, tell me.</p>
+
+<figure>
+    <img src="/img/air-quality-monitor-top.jpg" loading="lazy" width="1600" height="1244" alt="Top-down view of the monitor lying flat. The display shows a 2x2 grid of cards: orange Temp 29.2 C Hot, blue Humidity 59.1 % Optimal, green eCO2 400 ppm Excellent, purple TVOC 25 ppb Excellent. Five exhaust slots are cut into the lid below the screen.">
+    <figcaption>The UI: four cards, values averaged over the last 25 seconds.</figcaption>
+</figure>
+
+<h2>Enclosure</h2>
+
+<p>The enclosure is 3D printed and was designed in OpenSCAD by an LLM (I think it was GLM 5.1 or one of the Kimi models, I don't remember exactly). That was really impressive to me even before the Opus 5.5 days, and models are even better at 3D stuff nowadays. I just measured the board and its holes, told the LLM the numbers and it produced a really nice two-piece enclosure.</p>
+
+<p>The base has four standoffs for the board, an opening for the USB-C cable, vent slots low on the walls and space under the board for the sensors. The lid has a window for the display and a few exhaust slots on top, and it snaps into the base, so no screws there. I printed it on a Prusa CORE One in PLA, screwed the board in and it was done.</p>
+
+<figure>
+    <img src="/img/air-quality-monitor-enclosure-render.jpg" loading="lazy" width="1407" height="1191" alt="OpenSCAD render of the two-piece enclosure, exploded. The blue base box has four corner standoffs inside, a rectangular USB-C opening in the side wall and rows of square vent holes. The lid floats above it with a large display window, five exhaust slots and a snap bead on its skirt.">
+    <figcaption>The two parts in OpenSCAD, exploded.</figcaption>
+</figure>
+
+<p>One problem with this enclosure: it gets hot inside. The ESP32 and the display backlight keep heating the closed box and there is almost no airflow, so the board gets hotter and hotter. The temperature card shows much more than the real room temperature, which makes it not very useful as a thermometer. The next iteration of the enclosure definitely needs more ventilation, so air can actually flow through it.</p>
+
+<h2>Soldering</h2>
+
+<p>This was also my first time soldering. I bought a Yihua 706+ soldering and hot air station with a set of spare tips, and since I live in a small studio I also got a REFOX DFE-20B desktop fume extractor, so I don't fill the room with fumes. The solder joints are certainly not the prettiest, but they work, and I learned something new, which was cool.</p>
+
+<h2>What's inside</h2>
+
+<ul>
+    <li><strong>ESP32-32E</strong> (ESP32-WROOM-32) with a 3.2" ST7789P3 240x320 IPS display and XPT2046 resistive touch, both on SPI</li>
+    <li><strong>BME680</strong> (Bosch): temperature and humidity, also used to compensate the two gas sensors. I2C, 0x77</li>
+    <li><strong>CCS811</strong>: eCO2. I2C, 0x5A</li>
+    <li><strong>ENS160</strong> (ScioSense): TVOC. I2C, 0x53</li>
+</ul>
+<p>Why three sensors when two of them measure similar things? I read online that when one of these sensors is also used for temperature, it gives bad readings on its other values. So instead of figuring out how to work around that, I bought more sensors and gave each one a single job.</p>
+
+<h2>What's next</h2>
+
+<p>Overall it was a really great experience. Next I'd like to build my own drone from scratch. I already bought a bunch of brushless motors and sensors, so that's my next target once I'm back from SF.</p>
