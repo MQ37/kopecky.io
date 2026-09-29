@@ -48,7 +48,7 @@ echo "==> Generating blog index"
 {
     echo '<!-- title: Blog -->'
     echo '<h1>Posts</h1>'
-    echo '<ul>'
+    echo '<ul class="posts">'
 } > /tmp/_blog-index.html
 
 # Sort blog posts by date descending (newest first)
