@@ -17,5 +17,5 @@ echo "==> Building site"
 ./build.sh
 
 echo "==> Deploying to $TARGET"
-rsync -avz --delete public/ "$TARGET"
+rsync -avz --delete --exclude workshops public/ "$TARGET"
 echo "==> Done"
