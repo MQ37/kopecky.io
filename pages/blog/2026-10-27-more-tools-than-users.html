@@ -1,0 +1,71 @@
+<!-- title: More tools than users -->
+<!-- date: 2026-10-27 -->
+<h1>More tools than users</h1>
+<p class="subtitle"><strong>2026-10-27</strong></p>
+
+<p>In <a href="/blog/2026-10-15-the-ship-and-the-speedboat/">my last post</a> I wrote that code is no longer the moat. I think it goes further. Cheap code doesn't only remove the moat, it flips strategy. What was smart when code was expensive is now dumb, and what made no sense back then suddenly does.</p>
+
+<h2>Smart then</h2>
+
+<p>Take software marketplaces. An open marketplace used to be one of the smartest moves a platform could make. You keep the core closed, invite other developers to build on top and let them make money from it.</p>
+
+<p>It was a win-win because software was expensive. A community developer could only afford to maintain a few tools, so they put real effort into each one. The platform got a catalog it could never build alone, the developers got paid and users got good tools.</p>
+
+<h2>Dumb now</h2>
+
+<p>Now code is cheap and the same setup breaks. Publishing a tool costs almost nothing, so people push slop, a lot of it. The catalog floods, and at some point there are more tools than users.</p>
+
+<!-- PulseMCP figure checked 2026-10-27: "Showing 1 - 42 of 21,630 servers". -->
+<p>You can see it in public numbers. When OpenAI opened the GPT Store in January 2024, it said users had created <a href="https://openai.com/index/introducing-the-gpt-store/">over 3 million custom versions of ChatGPT</a> in two months. One MCP directory, <a href="https://www.pulsemcp.com/servers">PulseMCP</a>, lists over 20,000 MCP servers today. I don't think there are 20,000 different problems that need an MCP server. I'd bet a lot of it is the same idea built again, or a weekend experiment nobody touched since.</p>
+
+<p>For users it sucks. The good tool is buried under ten copies of it, they don't know what to trust, and they give up. Good developers get buried too, and the platform hosts a pile of junk with its name on it. Everyone loses. The tool count keeps going up and looks like growth, but past some point the count is the problem.</p>
+
+<h2>What still holds</h2>
+
+<p>The marketplaces that hold up best have an anchor. The App Store and Google Play sit on top of the phone and its operating system. You can't copy them by writing code, you would need the hardware and the ecosystem under it. Being the default way onto the phone also lets them be strict about what gets in.</p>
+
+<p>To be fair, an anchor is not the only thing that works. Steam doesn't own Windows and npm doesn't own JavaScript. Hugging Face <a href="https://huggingface.co/blog/ivanfioravanti/three-million-models-and-counting">passed three million public models</a> this summer and still works fine. What protects them is curation, trust and distribution. Steam charges a fee per game and lives on reviews and refunds. On npm and Hugging Face people mostly arrive with a name from docs or a friend, so search matters less. The VS Code Marketplace sits inside the editor, which is an anchor of its own.</p>
+
+<p>So the anchor does most of the work. Without one you need something else that is expensive to copy, and a big open catalog is not that anymore.</p>
+
+<h2>The clean copy</h2>
+
+<p>The flip side is the interesting part. Copying a big marketplace used to be dumb: you would have to rebuild thousands of tools, and the network effect would beat you anyway.</p>
+
+<p>Now a newcomer can use a messy marketplace as free market research. What people actually use is usually visible from installs, stars and reviews, and it's a small part of the catalog. Rebuild just that, keep it maintained and run a small curated store with no junk. I think that's what people want today: fewer tools that work.</p>
+
+<p>Trust and distribution still take time, that part didn't get cheap. But the code, which used to be the whole problem, is now the easy part.</p>
+
+<h2>Projects that never paid off</h2>
+
+<p>The same flip happens at personal scale. Projects that were never worth the cost are now cheap enough to just do.</p>
+
+<p>I wrote networking and TLS for TempleOS, in HolyC. TempleOS has no built-in networking. I adapted the TCP/IP stack from <a href="https://github.com/minexew/Shrine">Shrine</a>, an existing TempleOS networking project. The TLS 1.3, crypto, HTTP and JSON parts are new HolyC code. It's a toy with no certificate checks, but it really does speak TLS. Before, I think it would have taken me a month, maybe longer. With an agent, the TempleOS work together with the demo video took a couple of hours of hands-on time.</p>
+
+<p>Then Minecraft. For a joke video I made a mod for <a href="https://playhorizon.dev/">Horizon</a>, a rewrite of Minecraft in Rust, so not the usual Java modding. It took a couple of hours of hands-on time as well, and most of that was polishing the video: the timing and the details. The mod itself was a small part of it. Before agents I would first have had to learn Blender, textures and the modding ecosystem, and I think that alone is a month or two.</p>
+
+<p>An agent also edits my videos now. None of this was worth a month or two of my time, but now a joke is reason enough.</p>
+
+<h2>Prestige got cheap</h2>
+
+<p>Skills flipped too. Writing code or doing math proofs used to be prestigious because few people could. Now the entry point is really low.</p>
+
+<p>That doesn't mean anyone can do math at the top level. But a dedicated amateur with an agent as a tutor can get to a pretty interesting level and do things that used to need an expert. Same with code.</p>
+
+<p>It also means some things stopped being impressive. Telling an agent "make me a website" is not impressive, sorry. Wix did that years ago, it's just easier now. If anyone can do something, climb a level. Use the low entry point to reach what was out of reach, not to redo what was already easy.</p>
+
+<h2>Puzzles and real problems</h2>
+
+<p>I think engineers have two kinds of motivation: some love puzzles, some love real problems. For a long time it didn't matter which you were, because writing software was both. You got paid to solve puzzles, and the puzzles happened to solve problems.</p>
+
+<p>Now the agent takes a big part of the puzzle. If the puzzle was what you loved, I get why that feels bad, and a lot of engineers are annoyed right now. That's not a judgment, just a different motivation.</p>
+
+<p>Honestly, for me a lot of the fun used to be the puzzle too. But what I actually care about is the real problem at the end, and if the agent gets me there faster, I'm happy.</p>
+
+<p>Real problems pull toward hardware and the physical world. Software is the part that just got cheap. Hardware is still painful, and that's where a lot of the hard problems are. I think a lot of capable engineers will move there and solve much of it within a few years.</p>
+
+<p>Some people say the safe answer is to work with your hands. I don't think that's safe either. My guess is that basic manual work starts being automated in 5 to 10 years, by decent humanoid robots or specialized ones. That's a prediction, not a fact, and I'm more sure about the direction than the timing.</p>
+
+<p>What one capable, motivated person can build today is honestly unreal. It's a very interesting era to be alive.</p>
+
+<p>- mind dump from a walk in a park in San Francisco</p>
